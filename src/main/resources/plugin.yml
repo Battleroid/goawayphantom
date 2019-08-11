@@ -1,0 +1,4 @@
+name: Goawayphantom
+version: ${project.version}
+main: com.caseyweed.goawayphantom.Goawayphantom
+api-version: 1.13
