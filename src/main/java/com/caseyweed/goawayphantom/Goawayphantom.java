@@ -1,6 +1,8 @@
 package com.caseyweed.goawayphantom;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Creature;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -22,6 +24,10 @@ public final class Goawayphantom extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onCreatureSpawn(CreatureSpawnEvent event) {
+        // leave others alone
+        if (event.getEntityType() != EntityType.PHANTOM)
+            return;
+
         // don't bother if it's full moon
         if (isFullMoon(event.getLocation().getWorld().getFullTime()))
             return;
